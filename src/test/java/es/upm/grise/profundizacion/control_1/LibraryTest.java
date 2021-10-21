@@ -64,7 +64,7 @@ public class LibraryTest {
 		assertEquals(expected,cogido.getTitle());
 	}
 
-	//no pruebo a eliminar un libro que no existe ya que no se valora dicha excepción
+	// no pruebo a eliminar un libro que no existe ya que no se valora dicha excepción
 	@Test
 	public void correctaEliminacion() throws DuplicatedBookException {
 		String name = "mavenbook";
