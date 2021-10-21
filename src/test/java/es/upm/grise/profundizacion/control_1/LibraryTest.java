@@ -19,8 +19,14 @@ public class LibraryTest {
 		String expected = name;
 		Book lib = new Book(name);
 		biblio.addBook(lib);
-		Book cogido = biblio.getBook(name);
-		assertEquals(expected,cogido.getTitle());
+	}
+
+	@Test(expected = DuplicatedBookException.class)
+	public void libroDuplicado() throws DuplicatedBookException {
+		String name = "libro";
+		Book lib = new Book(name);
+		biblio.addBook(lib);
+		biblio.addBook(lib);
 	}
 
 	//Se eliminan libros correctamente (comprobar la condición de lista vacía y libro no existente).
