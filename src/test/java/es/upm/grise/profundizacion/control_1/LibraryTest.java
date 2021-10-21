@@ -16,9 +16,18 @@ public class LibraryTest {
 	@Test
 	public void libroAñadido() throws DuplicatedBookException, EmptyLibraryException, NonExistingBookException {
 		String name = "mavenbook";
-		String expected = name;
 		Book lib = new Book(name);
 		biblio.addBook(lib);
+	}
+
+	@Test
+	public void dosLibrosAñadidos() throws DuplicatedBookException, EmptyLibraryException, NonExistingBookException {
+		String name = "mavenbook";
+		String name2 = "arte de la guerra";
+		Book lib = new Book(name);
+		Book lib2 = new Book(name2);
+		biblio.addBook(lib);
+		biblio.addBook(lib2);
 	}
 
 	@Test(expected = DuplicatedBookException.class)
@@ -53,5 +62,14 @@ public class LibraryTest {
 		biblio.addBook(lib);
 		Book cogido = biblio.getBook(name);
 		assertEquals(expected,cogido.getTitle());
+	}
+
+	//no pruebo a eliminar un libro que no existe ya que no se valora dicha excepción
+	@Test
+	public void correctaEliminacion() throws DuplicatedBookException {
+		String name = "mavenbook";
+		Book lib = new Book(name);
+		biblio.addBook(lib);
+		biblio.removeBook(lib);
 	}
 }
