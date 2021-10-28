@@ -40,7 +40,7 @@ public class LibraryTest {
 
 	//Se eliminan libros correctamente (comprobar la condición de lista vacía y libro no existente).
 
-	//funciona
+
 	@Test(expected = NonExistingBookException.class)
 	public void libroNoExiste() throws DuplicatedBookException, EmptyLibraryException, NonExistingBookException {
 		Book libro = new Book("ejemplo");
