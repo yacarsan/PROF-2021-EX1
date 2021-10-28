@@ -48,7 +48,7 @@ public class LibraryTest {
 		Book libro2 = biblio.getBook("texto");
 	}
 
-	//funciona
+
 	@Test(expected = EmptyLibraryException.class)
 	public void listaVacia() throws EmptyLibraryException, NonExistingBookException {
 		biblio.getBook("inventado");
